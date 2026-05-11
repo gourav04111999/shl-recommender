@@ -2,8 +2,7 @@ services:
   - type: web
     name: shl-recommender
     runtime: python
-    pythonVersion: 3.11
-    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip setuptools wheel && CARGO_NET_OFFLINE=true pip install --no-build-isolation --prefer-binary -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1 --timeout-keep-alive 35
     envVars:
       - key: ANTHROPIC_API_KEY
