@@ -7,7 +7,7 @@ services:
       - key: ANTHROPIC_API_KEY
         sync: false          # set via Render dashboard — never commit your key
       - key: LLM_MODEL
-        value: claude-haiku-6-5
+        value: claude-haiku-4-5
     healthCheckPath: /health
     autoDeploy: true
     plan: free
